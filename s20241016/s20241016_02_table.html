@@ -7,12 +7,19 @@
     <title>Document</title>
 
     <style>
-        table{
+        table {
             background: #ccc;
             width: 100%;
-            border-collapse:collapse;
+            /* vh 高度 viewpoint height */
+            /*  */
+            height: 90vh;
+            /* height: 300px; */
+            /* height: 100%; */
+            border-collapse: collapse;
         }
-        td,th{
+
+        td,
+        th {
             border: 1px solid black;
         }
     </style>
@@ -21,23 +28,49 @@
 
 <body>
 
+
     <table>
         <!-- table row -->
         <tr>
             <!-- table data /table column -->
-            <td>
+             <!-- colspan -->
+             <!-- rowspan -->
+            <td colspan="2">
                 1
             </td>
-            <td>
+            <!-- <td>
                 2
-            </td>
+            </td> -->
             <td>
                 3
             </td>
         </tr>
+        <tr>
+            <!-- table data /table column -->
+            <td>
+                4
+            </td>
+            <td>
+                5
+            </td>
+            <td rowspan="2">
+                6
+            </td>
+        </tr>
+        <tr>
+            <!-- table data /table column -->
+            <td>
+                7
+            </td>
+            <td>
+                8
+            </td>
+            <!-- <td>
+                9
+            </td> -->
+        </tr>
 
     </table>
-
 </body>
 
 </html>
