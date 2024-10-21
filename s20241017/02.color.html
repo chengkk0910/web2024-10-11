@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <h1>使用顏色名稱</h1>
+  <p style="color:darkviolet;">Lorem ipsum dolor sit amet.</p>
+
+  <h1>使用 HEX 16 進位表示</h1>
+  <!-- 兩兩一組，第一組 red，第二組 green，第三組 blue -->
+  <p style="color:#ffff00; background-color: #000000;">Lorem ipsum dolor sit amet.</p>
+  <!-- 當三組，兩兩一組都相同時，可以省略一個，上下兩行都一樣 -->
+  <p style="color:#ff0; background-color: #000;">Lorem ipsum dolor sit amet.</p>
+
+  <h1>使用 rgb() 或 rgba()</h1>
+  <!-- 0~255 十進位的數字 -->
+  <p style="color:rgba(255, 179, 0)">Lorem ipsum dolor sit amet.</p>
+  <!-- 0.5 是透明度 alpha，0、0.1...0.9、1 -->
+  <p style="color:rgba(0, 217, 255, 0.5)">Lorem ipsum dolor sit amet.</p>
+
+  <hr>
+
+  <!-- emmet -->
+  <!-- https://docs.emmet.io/cheat-sheet/ -->
+  <!-- p*6 -->
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+
+</body>
+
+</html>

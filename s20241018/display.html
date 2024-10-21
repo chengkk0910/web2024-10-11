@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      /* text-align 區塊、表格內的內容對齊 */
+      text-align: center;
+      /* 
+        vertical-align 行內、表格的內容垂直對齊
+        top         整行頂部 (表格能用)
+        middle      整行中間 (表格能用)
+        bottom      整行底部 (表格能用)
+        text-top    文字字體頂部
+        text-bottom 文字字體底部
+        super       上標
+        sub         下標
+      */
+      vertical-align: sub;
+    }
+    span {
+      text-decoration: overline underline;
+      text-align: center;
+    }
+    p {
+      line-height: 3em;
+    }
+    .inline-block{
+      width: 100px;
+      height: 100px;
+      background: pink;
+      /*
+        display 修改元素的顯示方式
+        none: 不顯示
+        inline-block: 外在排列和 inline 相同，內部排列和 block 相同
+      */
+      display: inline-block;
+      text-align: center;
+      /* inline-block 會有 4px 的間距 */
+      /* margin-left: -4px; */
+    }
+    /* class 是 inline-block 但不是第一個 */
+    .inline-block:not(:first-child) {
+      margin-left: -4px;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <span>AAgaa</span>
+    <img src="https://picsum.photos/id/1/16/16" alt="">
+  </p>
+  <div style="height: 30px; line-height: 30px; background-color: gray;">
+    aaa
+  </div>
+  <div>
+    <div class="inline-block">inline-block</div>
+    <div class="inline-block">inline-block</div>
+    <div class="inline-block">inline-block</div>
+  </div>
+</body>
+</html>
