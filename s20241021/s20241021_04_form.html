@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        span{
+        span {
             display: inline-block;
             width: 10%;
             text-align: center;
             background-color: lightblue;
         }
-        input[type="text"]{
-            /* width: 500px; */
-            width: 70%;
-        }
-        input[type="number"]{
+
+        input[type="text"] {
             /* width: 500px; */
             width: 70%;
         }
 
-       
+        input[type="number"] {
+            /* width: 500px; */
+            width: 70%;
+        }
     </style>
 </head>
 
@@ -91,13 +91,32 @@
             <label for="">game</label>
         </p>
 
-        <!-- select -->
+        <!-- select / (input text) -->
+        <p>
+            Select 下拉選單
+        </p>
+        <p>
+            <!-- <input type="text" name="mySelect" id="" value="goSelect"> -->
+            <select name="mySelect" id="">
+                <option value="amy">amy</option>
+                <option value="bob">bob</option>
+                <option value="cat">cat</option>
+            </select>
+        </p>
         <!-- textarea -->
+         <p>
+            Textarea 多行文字
+         </p>
+        <p>
+            <textarea name="myTextarea" id="" cols="50" rows="5"></textarea>
+        </p>
 
 
 
         <!-- input submit-->
-        <input type="submit" value="submit">
+        <p>
+            <input type="submit" value="submit">
+        </p>
 
 
     </form>
