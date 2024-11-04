@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
         .box {
             background-image: url('./images/bg.png');
             width: 147px;
             height: 210px;
             background-color: lightblue;
             /* background-position: center top; */
-            background-position: 20% bottom;
+            background-position: left top;
+        }
+
+        .box-img {
+            width: 147px;
+            height: 210px;
+            background-color: lightblue;
         }
     </style>
 </head>
@@ -27,6 +38,12 @@
     <h3>box background-img</h3>
     <div class="box">
 
+    </div>
+
+    <!-- box img -->
+    <h3>box img</h3>
+    <div class="box-img">
+        <img src="./images/bg.png" alt="">
     </div>
 
 </body>
