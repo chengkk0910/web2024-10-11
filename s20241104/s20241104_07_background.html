@@ -8,8 +8,11 @@
     <style>
         * {
             box-sizing: border-box;
-            overflow: hidden;
+            /* 乙級 丙級 或者特定大小 */
+            /* 網頁失去往下滑的能力 */
+            /* overflow: hidden; */
         }
+    
 
         .box {
             background-image: url('./images/bg.png');
@@ -19,8 +22,10 @@
             /* background-position: center top; */
             background-position: left top;
         }
-
+        
         .box-img {
+            /* 固定地方隱藏 */
+            overflow: hidden;
             width: 147px;
             height: 210px;
             background-color: lightblue;
