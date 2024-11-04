@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* 乙級 丙級 或者特定大小 */
+            /* 網頁失去往下滑的能力 */
+            /* overflow: hidden; */
+        }
+    
+
+        .box {
+            background-image: url('./images/bg.png');
+            width: 147px;
+            height: 210px;
+            background-color: lightblue;
+            /* background-position: center top; */
+            background-position: left top;
+        }
+        
+        .box-img {
+            /* 固定地方隱藏 */
+            overflow: hidden;
+            width: 147px;
+            height: 210px;
+            background-color: lightblue;
+        }
+        table{
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- img -->
+    <h3>img 圖片</h3>
+    <img src="./images/bg.png" alt="">
+
+    <hr>
+    <!-- box background-img -->
+    <h3>box background-img</h3>
+    <div class="box">
+
+    </div>
+
+    <!-- box bg-img table -->
+    
+    <table>
+        <tr>
+            <td>
+                <div class="box">
+
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="box">
+
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="box">
+
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    
+                </div>
+            </td>
+            <td>
+                <div class="box">
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+  
+</body>
+
+</html>
