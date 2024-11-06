@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .fixed-box {
+            position: fixed;
+            right: 0%;
+            bottom: 0%;
+        }
+
         .green-box {
-            margin: auto;
+            /* margin: auto; */
             position: relative;
             width: 800px;
             height: 600px;
             background-color: lightgreen;
         }
 
-        .pink-box{
+        .pink-box {
             position: absolute;
             right: 5%;
             bottom: 10%;
@@ -26,11 +32,14 @@
 </head>
 
 <body>
-    <div class="green-box">
-        <div class="pink-box">
+    <div class="fixed-box">
+        <div class="green-box">
+            <div class="pink-box">
 
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
