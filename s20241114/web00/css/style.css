@@ -13,6 +13,7 @@ header {
 
 /* container */
 .container {
+    display: flex;
     width: 1024px;
     /* - 65px ok */
     /* -65 ng */
@@ -22,7 +23,18 @@ header {
 }
 
 /* container-left */
+aside {
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+    background-color: blueviolet;
+}
+
 /* container-right */
+main {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px);
+    background-color: aquamarine;
+}
 
 /* footer */
 footer {
