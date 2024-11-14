@@ -1,3 +1,33 @@
-h1 {
-    color: red;
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* header */
+header {
+    width: 1024px;
+    height: 65px;
+    background-color: lightblue;
+    margin: auto;
+}
+
+/* container */
+.container {
+    width: 1024px;
+    /* - 65px ok */
+    /* -65 ng */
+    height: calc(768px - 65px - 20px);
+    background-color: lightyellow;
+    margin: auto;
+}
+
+/* container-left */
+/* container-right */
+
+/* footer */
+footer {
+    width: 1024px;
+    height: 20px;
+    background-color: lightcoral;
+    margin: auto;
 }
