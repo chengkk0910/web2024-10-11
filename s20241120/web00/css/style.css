@@ -136,3 +136,8 @@ footer {
     border: 1px solid black;
     border-top: 0;
 }
+
+iframe{
+    width: 100%;
+    /* background-color: lightblue; */
+}
