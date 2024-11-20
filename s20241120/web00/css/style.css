@@ -72,6 +72,9 @@ main {
     /* background-color: red; */
     border: 1px solid black;
     border-bottom: 0;
+    font-size: 24px;
+    font-family: '標楷體';
+    color: #0000FF;
 }
 
 .main-footer{
