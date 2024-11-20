@@ -5,10 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-image: url('./images/0101.jpg');
+        }
+        .container-main {
+            text-align: center;
+        }
+        .container-main>p{
+            font-family: '標楷體';
+            font-weight: bold;
+            font-size: 24px;
+            color: #0000FF;
+            font-style: italic;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
+
+        /* header */
+        .my-title{
+            font-family: '標楷體';
+            font-weight: bold;
+            font-size: 18px;
+            color: #0000FF;
+            text-align: center;
+        }
+
+        /* nav */
+        nav{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+    </style>
 </head>
 
 <body>
-    Hello guitar_history
+    <header class="my-title">
+        吉他社社史
+    </header>
+
+    <nav>
+        <div class="nav-item">
+            <a href="">
+                回社團介紹首頁 
+            </a>   
+        </div>
+        <div class="nav-item">
+            <a href="">
+                吉他社近期活動公告 
+            </a>   
+        </div>
+        <div class="nav-item">
+            <a href="">
+                吉他社教學內容 
+            </a>   
+        </div>
+    </nav>
 </body>
 
 </html>
