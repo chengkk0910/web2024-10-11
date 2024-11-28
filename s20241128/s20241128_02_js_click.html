@@ -12,26 +12,33 @@
             /* background-color: lightblue; */
         }
 
-        .bg-blue{
+        .bg-blue {
             background-color: lightblue;
         }
 
-        .bg-pink{
+        .bg-pink {
             background-color: lightpink;
         }
 
-        .bg-green{
+        .bg-green {
             background-color: lightgreen;
         }
     </style>
 </head>
 
 <body>
-    <div id="box" class="bg-blue">
+    <div id="box" class="bg-blue" onclick="boxFun()">
 
     </div>
 
     <script>
+        // 1. div onclick => js function
+        function boxFun() {
+            console.log('hello box');
+            box.setAttribute('class', 'bg-pink');
+
+        }
+
         let box = document.getElementById('box');
         // css 
         // box.style.backgroundColor = "lightpink";
@@ -41,8 +48,13 @@
         // box.classList.add("bg-pink");
 
         // attr
-        box.setAttribute("class", "bg-pink");
-        box.setAttribute("class", "bg-green");
+        // box.setAttribute("class", "bg-pink");
+        // // box.setAttribute("class", "bg-green");
+
+        // console.log('box', box);
+
+        // event
+
 
     </script>
 
