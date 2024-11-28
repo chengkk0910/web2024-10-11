@@ -9,7 +9,7 @@
         .container {
             width: 90%;
             /* height: 90vh; */
-            background-color: lightblue;
+            /* background-color: lightblue; */
             margin: auto;
             display: flex;
             justify-content: space-around;
@@ -21,7 +21,7 @@
         .item {
             width: 300px;
             height: 400px;
-            background-color: lightpink;
+            /* background-color: lightpink; */
             text-align: center;
             border: 1px solid black;
             border-radius: 20px;
@@ -34,7 +34,7 @@
             width: 60%;
         }
 
-        .text-red{
+        .text-red {
             color: red;
             font-size: 30px;
         }
@@ -86,7 +86,7 @@
             </button>
         </div>
     </div>
-
+    <input type="text" id="myInput" value="555">
     <script>
         // 1.bind
         let btn1 = document.getElementById('btn1');
@@ -95,31 +95,36 @@
         let price1 = document.getElementById('price1');
         let price2 = document.getElementById('price2');
         let price3 = document.getElementById('price3');
+        let myInput = document.getElementById('myInput');
 
         // console.log('btn1', btn1);
         // console.log('btn2', btn2);
         // console.log('btn3', btn3);
 
         // 2.action
+        // innerText / innerValue / Value
+
         btn1.addEventListener('click', function () {
             console.log('btn1 click ok');
-            price1.innerText = '1500'; 
-            price1.setAttribute('class','text-red');
-            btn1.style.display = "none";   
+            price1.innerText = '1500';
+            price1.setAttribute('class', 'text-red');
+            btn1.style.display = "none";
         });
 
         btn2.addEventListener('click', function () {
             console.log('btn2 click ok');
             price2.innerText = '2000';
-            price2.setAttribute('class','text-red');
-            btn2.style.display = "none";   
+            price2.setAttribute('class', 'text-red');
+            btn2.innerText = 'test';
+            myInput.setAttribute('value', '55688');
+
         });
 
         btn3.addEventListener('click', function () {
             console.log('btn3 click ok');
             price3.innerText = '3000';
-            price3.setAttribute('class','text-red');
-            btn3.style.display = "none";   
+            price3.setAttribute('class', 'text-red');
+            btn3.style.display = "none";
         });
 
 
