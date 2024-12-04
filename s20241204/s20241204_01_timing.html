@@ -19,6 +19,21 @@
             // 1.bind
             const myBtn = $('#myBtn');
 
+
+            let myFunVariable = function myFun() {
+                console.log('hi myFun');
+
+            };
+
+            function myFunOut() {
+                console.log('hi myFun');
+
+            };
+
+            console.log('myFunVariable', myFunVariable);
+            myFunOut();
+
+
             // 2.action
             myBtn.click(function (e) {
                 // console.log('myBtn', myBtn);
