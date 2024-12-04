@@ -93,7 +93,7 @@
                 return sum * 10;
             }
 
-            function showResult(num1Value, num2Value , optValue , sum, x10Result) {
+            function showResult(num1Value, num2Value, optValue, sum, x10Result) {
                 box1Span.text(`${num1Value} ${optValue} ${num2Value} = ${sum}`);
                 box2Span.text(`${num1Value} ${optValue} ${num2Value} = ${sum}`);
                 box3Span.text(`${sum} x 10 = ${x10Result}`);
@@ -160,7 +160,11 @@
                 let x10Result = x10Fun(calResult);
 
                 // 6.show result
-                showResult(num1Value, num2Value, optValue ,calResult, x10Result);
+                // showResult(num1Value, num2Value, optValue ,calResult, x10Result);
+
+                setTimeout(function () {
+                    showResult(num1Value, num2Value, optValue, calResult, x10Result);
+                }, 3000)
 
 
 
