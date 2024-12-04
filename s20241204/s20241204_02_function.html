@@ -52,21 +52,28 @@
 
         let nameCard = 'kai';
         let mobileCard = '0911-111-111';
-        cardFun(nameCard,mobileCard);
+        cardFun(nameCard, mobileCard);
 
 
         // 做日期
-          function dateFun(month, date) {
+        function dateFun(month, date) {
             console.log(`${month} - ${date} `);
 
         }
 
         let month = 12;
         let date = '04';
-        dateFun(month,date);
+        dateFun(month, date);
 
 
+        // sumFun
+        function sum(num1, num2) {
+            let result = num1 + num2;
+            console.log(`sum = ${num1} + ${num2} = ${result} `);
+            return result;
+        }
 
+        let sumResult = sum(10, 20);
 
     </script>
 </body>
