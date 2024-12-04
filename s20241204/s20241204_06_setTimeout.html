@@ -81,6 +81,16 @@
 
             // timer
             let myInterval;
+            let count = 0;
+
+            // for 1 -> 10  sec:1
+            let timer = setInterval(function () {
+                count++;
+                console.log(count);
+                if(count>=10){
+                    clearInterval(timer);
+                }
+            }, 1000)
 
             // 2.action
             myBtn.click(function () {
@@ -105,14 +115,17 @@
 
                 // 無限
                 myInterval = setInterval(function () {
-                    console.log(`my text is ${getTextValue}`);
+                    count++;
+                    console.log(`my text is ${getTextValue} - ${count}`);
                     box1Span.text(getTextValue);
-                    box2Span.text(getTextValue);
+                    box2Span.text(`${getTextValue} - ${count}`);
 
-                    setTimeout(function () {
-                        box1Span.text('');
-                        box2Span.text('');
-                    }, 500);
+
+
+                    // setTimeout(function () {
+                    //     box1Span.text('');
+                    //     box2Span.text('');
+                    // }, 500);
                 }, getTimeValue);
 
 
