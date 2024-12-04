@@ -79,8 +79,13 @@
             const box1Span = $('#box1Span');
             const box2Span = $('#box2Span');
 
+            // timer
+            let myInterval;
+
             // 2.action
             myBtn.click(function () {
+
+                clearInterval(myInterval);
                 console.log('myBtn ok ');
 
                 let getTextValue = myText.val();
@@ -99,11 +104,11 @@
                 // }, getTimeValue)
 
                 // 無限
-                setInterval(function () {
+                myInterval = setInterval(function () {
                     console.log(`my text is ${getTextValue}`);
                     box1Span.text(getTextValue);
                     box2Span.text(getTextValue);
-                    
+
                     setTimeout(function () {
                         box1Span.text('');
                         box2Span.text('');
