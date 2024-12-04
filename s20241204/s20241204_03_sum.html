@@ -10,12 +10,13 @@
             box-sizing: border-box;
         }
 
-        .container{
+        .container {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-around;
             width: 80%;
-            margin:auto;
+            margin: auto;
 
         }
 
@@ -25,7 +26,7 @@
             height: 300px;
             background-color: lightblue;
             text-align: center;
-            padding-top: 5%;
+            padding-top: 30px;
             margin-top: 30px;
 
         }
@@ -46,6 +47,9 @@
             <p>
                 <button type="button" id="myBtn">myBtn</button>
             </p>
+            <p>
+                <span id="box1Span"></span>
+            </p>
         </div>
         <div class="box">
             sum = ?
@@ -57,26 +61,48 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        // sumFun
-        function sum(num1, num2) {
-            let result = num1 + num2;
-            console.log(`sum = ${num1} + ${num2} = ${result} `);
-            return result;
-        }
+        $(document).ready(function () {
+            // 1. bind
+            const num1 = $('#num1');
+            const num2 = $('#num2');
+            const myBtn = $('#myBtn');
+            const box1Span = $('#box1Span');
 
-        let sumResult = sum(10, 20);
+            // 2.action
+            myBtn.click(function (e) {
+                console.log('myBtn ok');
 
-        function x10Fun(sum) {
-            let result = sum * 10;
-            return result;
-        }
+                // 1.get num1
+                // 2.get num2
+                // 3.sum = num1 + num2
 
-        let x10Result = x10Fun(sumResult)
-        console.log('x10Result', x10Result);
+                // 1.get num1
+                let num1Value = Number(num1.val());
+                console.log('num1Value', num1Value);
+                console.log('num1Value typeof', typeof (num1Value));
+
+                // 2.get num2
+                let num2Value = Number(num2.val());
+                console.log('num2Value', num2Value);
+                console.log('num2Value typeof', typeof (num2Value));
+
+                // 3.sum = num1 + num2
+                let sum = num1Value + num2Value;
+                console.log('sum', sum);
+
+                // 4.show result box1Span
+                box1Span.text(`${num1Value} + ${num2Value} = ${sum}`);
 
 
+
+            });
+
+
+        });
     </script>
 </body>
 
