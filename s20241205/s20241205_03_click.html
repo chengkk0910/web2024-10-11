@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-red {
+            background-color: lightpink;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet.
+    </p>
+
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // 1.bind
+            const myP = $('p');
+            const myInput = $('input');
+
+            // 2.action
+            myP.click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+
+                console.log('this', this);
+                console.log('$(this)', $(this));
+
+            });
+
+            myInput.focus(function (e) {
+                e.preventDefault();
+                $(this).attr('class', 'bg-red');
+            });
+
+            myInput.blur(function (e) {
+                e.preventDefault();
+                $(this).attr('class', 'bg-white');
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
