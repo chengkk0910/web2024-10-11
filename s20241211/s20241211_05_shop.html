@@ -125,7 +125,7 @@
             </td> -->
             <td>
                 <p id="sumResult">
-                     0 元
+                    0 元
                 </p>
 
             </td>
@@ -141,6 +141,23 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
+            // function
+            // get all Result => sum
+            function getSum() {
+                let getTotal1Value = Number(total1.text());
+                let getTotal2Value = Number(total2.text());
+                let getTotal3Value = Number(total3.text());
+                console.log('getTotal1Value', getTotal1Value);
+                console.log('getTotal2Value', getTotal2Value);
+                console.log('getTotal3Value', getTotal3Value);
+
+                let sum = getTotal1Value + getTotal2Value + getTotal3Value;
+                console.log('getSum', sum);
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+
+            }
+
             // 1.bind
             const price1 = $('#price1');
             const input1 = $('#input1');
@@ -169,13 +186,7 @@
                 console.log(result1);
                 total1.text(result1);
 
-                // 
-                sum = sum + result1;
-                console.log('sum', sum);
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
-
-
+                getSum();
             });
 
             input2.change(function (e) {
@@ -188,10 +199,7 @@
                 console.log(result2);
                 total2.text(result2);
 
-                sum = sum + result2;
-                console.log('sum', sum);
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
+                getSum();
 
             });
 
@@ -205,10 +213,7 @@
                 console.log(result3);
                 total3.text(result3);
 
-                sum = sum + result3;
-                console.log('sum', sum);
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
+                getSum();
 
             });
 
