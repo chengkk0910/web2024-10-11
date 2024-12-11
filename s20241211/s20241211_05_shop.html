@@ -23,6 +23,11 @@
         tr:nth-child(even) {
             /* background-color: #dddddd; */
         }
+
+        .text-red {
+            color: red;
+            font-size: 30px;
+        }
     </style>
 </head>
 
@@ -153,6 +158,30 @@
 
                 let sum = getTotal1Value + getTotal2Value + getTotal3Value;
                 console.log('getSum', sum);
+
+
+                // > 200
+                // 打8折
+                // other
+                // 原價
+                // if (sum >= 200) {
+                //     sum = sum * 0.8;
+                //     let resultString = `${sum} 元`;
+                //     sumResult.text(resultString);
+                // } else {
+                //     let resultString = `${sum} 元`;
+                //     sumResult.text(resultString);
+                // }
+
+                // 重構
+                if (sum >= 200) {
+                    sum = sum * 0.8;
+                    sumResult.attr('class', 'text-red');
+                } else {
+                    sumResult.attr('class', '');
+                    // sumResult.removeClass('text-red');
+                }
+
                 let resultString = `${sum} 元`;
                 sumResult.text(resultString);
 
