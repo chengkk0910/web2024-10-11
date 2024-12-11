@@ -115,9 +115,26 @@
                 </p>
             </td>
         </tr>
+        <tr>
+            <td colspan="3">
+                總共金額為
+            </td>
+            <!-- <td>
+            </td>
+            <td>
+            </td> -->
+            <td>
+                <p id="sumResult">
+                     0 元
+                </p>
 
+            </td>
+        </tr>
 
     </table>
+
+    <hr>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -137,6 +154,10 @@
             const input3 = $('#input3');
             const total3 = $('#total3');
 
+            const sumResult = $('#sumResult');
+            let sum = 0;
+
+
             // 2.action
             input1.change(function (e) {
                 console.log('chaneg ok');
@@ -147,6 +168,13 @@
                 console.log(getInput1Value);
                 console.log(result1);
                 total1.text(result1);
+
+                // 
+                sum = sum + result1;
+                console.log('sum', sum);
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+
 
             });
 
@@ -160,6 +188,11 @@
                 console.log(result2);
                 total2.text(result2);
 
+                sum = sum + result2;
+                console.log('sum', sum);
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+
             });
 
             input3.change(function (e) {
@@ -171,6 +204,11 @@
                 console.log(getInput3Value);
                 console.log(result3);
                 total3.text(result3);
+
+                sum = sum + result3;
+                console.log('sum', sum);
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
 
             });
 
