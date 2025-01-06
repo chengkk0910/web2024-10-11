@@ -36,21 +36,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Amy</td>
-                    <td>
+                <?php foreach ($data as $key => $value) : ?>
+                    <tr>
+                        <td>1</td>
+                        <td>Amy</td>
+                        <td>
 
-                        <button id="editID" data-id="1" type="button" class="btn btn-warning my-edit" data-bs-toggle="modal"
-                            data-bs-target="#myModal2">
-                            edit
-                        </button>
-                        &nbsp;&nbsp;
-                        <a href="./del.html">
-                            <button type="button" class="btn btn-danger">del</button>
-                        </a>
-                    </td>
-                </tr>
+                            <button id="editID" data-id="<?php $value['id'] ?>" type="button" class="btn btn-warning my-edit" data-bs-toggle="modal"
+                                data-bs-target="#myModal2">
+                                edit
+                            </button>
+                            &nbsp;&nbsp;
+                            <a href="./del.html">
+                                <button type="button" class="btn btn-danger">del</button>
+                            </a>
+                        </td>
+                    </tr>
+
+                <?php endforeach ?>
+
+
                 <tr>
                     <td>2</td>
                     <td>Bob</td>
@@ -164,14 +169,14 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // 1.bind
             // const editID = $('#editID');
             const myEdit = $('.my-edit');
             const myModal2 = $('#myModal2');
 
             // 2.action
-            myEdit.click(function (e) {
+            myEdit.click(function(e) {
                 console.log('editID ok');
 
                 console.log('this', this);
