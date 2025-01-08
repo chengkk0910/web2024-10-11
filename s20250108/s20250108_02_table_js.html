@@ -14,7 +14,7 @@
     <div class="container mt-3">
         <h2>Bordered Table</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="myTable">
             <thead>
                 <tr>
                     <th>id</th>
@@ -24,41 +24,99 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td>2</td>
                     <td>台中店</td>
                     <td>0922</td>
                     <td>台中市中正路2號</td>
-                </tr>
+                </tr> -->
 
             </tbody>
         </table>
     </div>
 
     <script>
-        let myObj = [
-            {
-                'id': '1',
-                'name': '台北店',
-                'mobile': '0911',
-                'address': '台北市中正路1號'
-            },
-            {
-                'id': '2',
-                'name': '台中店',
-                'mobile': '0922',
-                'address': '台中市中正路2號'
-            },
-            {
-                'id': '3',
-                'name': '高雄店',
-                'mobile': '0933',
-                'address': '高雄市中正路3號'
-            },
-        ]
 
-        console.log('myObj', myObj);
 
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // $.ajax({
+            //     type: "method",
+            //     url: "url",
+            //     data: "data",
+            //     dataType: "dataType",
+            //     success: function (response) {
+            //         data = response.data;
+            //         // foreach append 
+            //     }
+            // });
+
+            let data = [
+                {
+                    'id': '1',
+                    'name': '台北店',
+                    'mobile': '0911',
+                    'address': '台北市中正路1號'
+                },
+                {
+                    'id': '2',
+                    'name': '台中店',
+                    'mobile': '0922',
+                    'address': '台中市中正路2號'
+                },
+                {
+                    'id': '3',
+                    'name': '高雄店',
+                    'mobile': '0933',
+                    'address': '高雄市中正路3號'
+                },
+            ]
+
+            console.log('data', data);
+
+            // 1.bind
+            // table 
+            const myTable = $('#myTable');
+            const myTbody = myTable.find('tbody');
+            console.log('myTable', myTable);
+            console.log('myTbody', myTbody);
+
+
+            // 2.action
+
+            // data -> append table 
+
+
+            // .class
+            // $(selector).each(function (index, element) {
+            //     // element == this
+
+            // });
+
+            $.each(data, function (key, value) {
+                console.log('key', key);
+                console.log('value', value);
+
+                let tmp = `
+                 <tr>
+                    <td>${value['id']}</td>
+                    <td>${value['name']}</td>
+                    <td>${value['mobile']}</td>
+                    <td>${value['address']}</td>
+                 </tr>
+                `;
+                myTbody.append(tmp);
+
+            });
+
+
+        });
     </script>
 </body>
 
