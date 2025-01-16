@@ -65,23 +65,70 @@
         let rate = 1.08;
         let sum = 0;
         let tmpObj = {};
+        let tmpArr = [];
+        let tmpYear = 1;
+
+        // 第一年
         for (let i = 1; i <= 10; i++) {
             if (sum == 0) {
-                sum = originMoney;
+                sum = originMoney.toFixed(2);
             }
             console.log(`o 第${i}年 => ${sum}`);
             tmpObj[i] = sum;
 
-            sum = Number(((sum) * rate).toFixed(2));
+            // sum = Number(((sum) * rate).toFixed(2));
+            sum = ((sum) * rate).toFixed(2);
 
 
             console.log(`c 第${i}年 => ${sum}`);
-
         }
-        tmpObj['name'] = '第一年';
+        tmpObj['name'] = `第${tmpYear}年`;
+        tmpArr.push(tmpObj);
 
+        // 第二年
+        tmpYear = 2;
+        tmpObj = {};
+        sum = 0;
+        for (let i = 1; i <= 10; i++) {
+            if (i < tmpYear) {
+                let tmp = 0;
+                tmpObj[i] = tmp.toFixed(2);
+                continue;
+            }
+
+            if (i == tmpYear) {
+                sum = Number(tmpArr[0][1]) + Number(tmpArr[0][2]);
+                console.log(`o new2第${i}年 => ${sum}`);
+                tmpObj[i] = sum;
+                console.log('change sum', sum);
+                sum = ((sum) * rate).toFixed(2);
+                console.log(`c 第${i}年 => ${sum}`);
+                continue
+            }
+
+            console.log(`o new3第${i}年 => ${sum}`);
+            tmpObj[i] = sum;
+            console.log('change sum', sum);
+            sum = ((sum) * rate).toFixed(2);
+
+            console.log(`c 第${i}年 => ${sum}`);
+        }
+        tmpObj['name'] = `第${tmpYear}年`;
+        tmpArr.push(tmpObj);
 
         console.log('tmpObj', tmpObj);
+
+        // tmpObj[2] + tmpObj[1]
+
+        // [
+        //     {
+        //       1:10,  
+        //       2:10.8,  
+        //     }
+        // ]
+
+        console.log('tmpArr', tmpArr);
+
 
 
 
@@ -129,17 +176,30 @@
         // 2.action
         let tmpText = `
                 <tr>
-                    <td class="tdname">${tmpObj['name']}</td>
-                    <td class="td1">${tmpObj[1]}</td>
-                    <td class="td2">${tmpObj[2]}</td>
-                    <td class="td3">${tmpObj[3]}</td>
-                    <td class="td4">${tmpObj[4]}</td>
-                    <td class="td5">${tmpObj[5]}</td>
-                    <td class="td6">${tmpObj[6]}</td>
-                    <td class="td7">${tmpObj[7]}</td>
-                    <td class="td8">${tmpObj[8]}</td>
-                    <td class="td9">${tmpObj[9]}</td>
-                    <td class="td10">${tmpObj[10]}</td>
+                    <td class="tdname">${tmpArr[0]['name']}</td>
+                    <td class="td1">${tmpArr[0][1]}</td>
+                    <td class="td2">${tmpArr[0][2]}</td>
+                    <td class="td3">${tmpArr[0][3]}</td>
+                    <td class="td4">${tmpArr[0][4]}</td>
+                    <td class="td5">${tmpArr[0][5]}</td>
+                    <td class="td6">${tmpArr[0][6]}</td>
+                    <td class="td7">${tmpArr[0][7]}</td>
+                    <td class="td8">${tmpArr[0][8]}</td>
+                    <td class="td9">${tmpArr[0][9]}</td>
+                    <td class="td10">${tmpArr[0][10]}</td>
+                </tr>
+                 <tr>
+                    <td class="tdname">${tmpArr[1]['name']}</td>
+                    <td class="td1">${tmpArr[1][1]}</td>
+                    <td class="td2">${tmpArr[1][2]}</td>
+                    <td class="td3">${tmpArr[1][3]}</td>
+                    <td class="td4">${tmpArr[1][4]}</td>
+                    <td class="td5">${tmpArr[1][5]}</td>
+                    <td class="td6">${tmpArr[1][6]}</td>
+                    <td class="td7">${tmpArr[1][7]}</td>
+                    <td class="td8">${tmpArr[1][8]}</td>
+                    <td class="td9">${tmpArr[1][9]}</td>
+                    <td class="td10">${tmpArr[1][10]}</td>
                 </tr>
         `;
         myTbody.append(tmpText);
