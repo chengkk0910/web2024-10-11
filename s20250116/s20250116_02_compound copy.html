@@ -61,6 +61,7 @@
     <script>
 
         let originMoney = 10;
+        let tmp = 0;
         let rate = 1.08;
         let sum = 0;
         let tmpObj = {};
@@ -173,25 +174,35 @@
         console.log('tmpObj', tmpObj);
 
         // 2.action
-        $.each(tmpArr, function (key, value) {
-            let tmpText = `
+        let tmpText = `
                 <tr>
-                    <td class="tdname">${value['name']}</td>
-                    <td class="td1">${value[1]}</td>
-                    <td class="td2">${value[2]}</td>
-                    <td class="td3">${value[3]}</td>
-                    <td class="td4">${value[4]}</td>
-                    <td class="td5">${value[5]}</td>
-                    <td class="td6">${value[6]}</td>
-                    <td class="td7">${value[7]}</td>
-                    <td class="td8">${value[8]}</td>
-                    <td class="td9">${value[9]}</td>
-                    <td class="td10">${value[10]}</td>
+                    <td class="tdname">${tmpArr[0]['name']}</td>
+                    <td class="td1">${tmpArr[0][1]}</td>
+                    <td class="td2">${tmpArr[0][2]}</td>
+                    <td class="td3">${tmpArr[0][3]}</td>
+                    <td class="td4">${tmpArr[0][4]}</td>
+                    <td class="td5">${tmpArr[0][5]}</td>
+                    <td class="td6">${tmpArr[0][6]}</td>
+                    <td class="td7">${tmpArr[0][7]}</td>
+                    <td class="td8">${tmpArr[0][8]}</td>
+                    <td class="td9">${tmpArr[0][9]}</td>
+                    <td class="td10">${tmpArr[0][10]}</td>
+                </tr>
+                 <tr>
+                    <td class="tdname">${tmpArr[1]['name']}</td>
+                    <td class="td1">${tmpArr[1][1]}</td>
+                    <td class="td2">${tmpArr[1][2]}</td>
+                    <td class="td3">${tmpArr[1][3]}</td>
+                    <td class="td4">${tmpArr[1][4]}</td>
+                    <td class="td5">${tmpArr[1][5]}</td>
+                    <td class="td6">${tmpArr[1][6]}</td>
+                    <td class="td7">${tmpArr[1][7]}</td>
+                    <td class="td8">${tmpArr[1][8]}</td>
+                    <td class="td9">${tmpArr[1][9]}</td>
+                    <td class="td10">${tmpArr[1][10]}</td>
                 </tr>
         `;
-            myTbody.append(tmpText);
-
-        });
+        myTbody.append(tmpText);
 
 
     </script>
