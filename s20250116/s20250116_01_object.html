@@ -22,32 +22,48 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        let myArr = [1,2,3];
-        console.log('myArr',myArr);
-        console.log('myArr typeof',typeof(myArr));
-        console.log('myArr array ?',Array.isArray(myArr));
+        let myArr = [1, 2, 3];
+        console.log('myArr', myArr);
+        console.log('myArr typeof', typeof (myArr));
+        console.log('myArr array ?', Array.isArray(myArr));
 
-        
+
         let myObj = {
             s1: 'amy',
             s2: 'bob',
             s3: 'cat',
-            sayHello: function(){
-                console.log('hello');                
-            }
+            sayHello: function () {
+                console.log('hello');
+            },
+            call: function (data) {
+                console.log(`call data is ${data}`);
+
+            },
+            helloS1: function () {
+                console.log('this', this);
+                console.log('this.s1', this.s1);
+            },
+            helloS2: () => {
+                console.log('this', this);
+                console.log('this.s2', this.s2);
+            },
         }
 
-        console.log('myObj array ?',Array.isArray(myObj));
+        console.log('myObj array ?', Array.isArray(myObj));
         let name = 'taisan';
         console.log('myObj', myObj);
-        console.log('myObj["s1"]',myObj['s1']);
-        console.log('myObj點s1',myObj.s1);
-        console.log('myObj點[s2Var]',myObj[name]);
-        console.log('myObj點sayHello',myObj.sayHello);
+        console.log('myObj["s1"]', myObj['s1']);
+        console.log('myObj點s1', myObj.s1);
+        console.log('myObj點[s2Var]', myObj[name]);
+        console.log('myObj點sayHello', myObj.sayHello);
 
         myObj.sayHello();
         myObj['sayHello']();
 
+        myObj.call('kai hello');
+
+        myObj.helloS1();
+        myObj.helloS2();
 
 
 
@@ -83,8 +99,8 @@
 
 
 
-        
-        
+
+
 
     </script>
 </body>
