@@ -99,7 +99,8 @@
                 if (i == tmpYear) {
                     sum = originMoney + Number(tmpArr[tmpYear - 2][tmpYear]);
                     console.log(`o ${tmpYear} - 第${i}年 => ${sum}`);
-                    tmpObj[i] = sum;
+                    let tmpText = Number(sum).toFixed(2);
+                    tmpObj[i] = tmpText;
                     console.log('change sum', sum);
                     sum = ((sum) * rate).toFixed(2);
                     console.log(`c 第${i}年 => ${sum}`);
@@ -107,7 +108,11 @@
                 }
 
                 console.log(`o ${tmpYear} - 第${i}年 => ${sum}`);
-                tmpObj[i] = sum;
+                console.log('sum',sum);
+                console.log('sum typeof', typeof(sum));
+                
+                let tmpText = Number(sum).toFixed(2);
+                tmpObj[i] = tmpText;
                 console.log('change sum', sum);
                 sum = ((sum) * rate).toFixed(2);
 
