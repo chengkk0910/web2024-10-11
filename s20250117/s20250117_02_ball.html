@@ -31,18 +31,20 @@
         span {
             font-size: 40px;
         }
-        img{
+
+        img {
             /* width: 100%; */
         }
 
-        .container-box{
+        .container-box {
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-        .img-box{
+
+        .img-box {
             width: 100%;
-            height: 45vh ;
+            height: 45vh;
             /* background-color: lightblue; */
             overflow: hidden;
         }
@@ -60,7 +62,7 @@
         <div class="row">
             <div class="col-2">
                 <div class="img-box">
-                    <img src="./images/ball_left.png" class="img-fluid mt-3 rounded"  alt="" srcset="">
+                    <img src="./images/ball_left.png" class="img-fluid mt-3 rounded" alt="" srcset="">
                 </div>
             </div>
             <div class="col-8">
@@ -68,11 +70,11 @@
                     <div class="container-box">
                         <div>
                             倒數計時<br>
-                            <span>60</span>                  
+                            <span id="timer">60</span>
                         </div>
                         <div>
                             最高分數<br>
-                            <span>999</span>
+                            <span id="highScore">999</span>
                         </div>
                     </div>
                     <br><br><br>
@@ -80,13 +82,13 @@
                         分數
                     </p>
                     <p>
-                        <span>168</span>
+                        <span id="nowScore">168</span>
                     </p>
                 </div>
             </div>
             <div class="col-2">
                 <div class="img-box ">
-                    <img src="./images/ball.png" class="img-fluid mt-3 rounded"  alt="" srcset="">
+                    <img src="./images/ball.png" class="img-fluid mt-3 rounded" alt="" srcset="">
                 </div>
             </div>
         </div>
@@ -94,9 +96,11 @@
 
     <div class="container text-center mt-5">
         <div class="box2">
-            <button type="button" class="btn btn-dark btn-lg">開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
-            <button type="button" class="btn btn-dark btn-lg">投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
-            <button type="button" class="btn btn-danger btn-lg">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置
+            <button type="button" id="startBtn"
+                class="btn btn-dark btn-lg">開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
+            <button type="button" id="scoreBtn"
+                class="btn btn-dark btn-lg">投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
+            <button type="button" id="resetBtn" class="btn btn-danger btn-lg">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置
 
             </button>
         </div>
@@ -115,10 +119,26 @@
         $(document).ready(function () {
 
             // 1.bind
-
+            const timer = $('#timer');
+            const highScore = $('#highScore');
+            const nowScore = $('#nowScore');
+            const startBtn = $('#startBtn');
+            const scoreBtn = $('#scoreBtn');
+            const resetBtn = $('#resetBtn');
 
             // 2.action
+            startBtn.click(function (e) {
+                console.log('startBtn ok');
 
+            });
+
+            scoreBtn.click(function (e) {
+                console.log('scoreBtn ok');
+            });
+
+            resetBtn.click(function (e) {
+                console.log('resetBtn ok');
+            });
 
 
         });
