@@ -129,18 +129,49 @@
             let scoreVar = 0;
             let scoreHighVar = 0;
             let timeVar = 3;
+            let gameFlag = true;
 
             nowScore.text(scoreVar);
             highScore.text(scoreHighVar);
             timer.text(timeVar);
 
+            shootBtn.hide();
+
             // 2.action
             startBtn.click(function (e) {
+                if (gameFlag == false) {
+                    console.log('gameFlag false', gameFlag);
+                    return false;
+                }
+                startBtn.hide();
+                shootBtn.show();
                 console.log('startBtn ok');
+                // timer -1 / sec / 開始 start 停止 0
+                const myInterval = setInterval(myTimer, 1000);
+                let tmpTime = timeVar;
+                function myTimer() {
+                    tmpTime = tmpTime - 1;
+                    if (tmpTime < 0) {
+                        gameFlag = false;
+                        clearInterval(myInterval);
+                        startBtn.show();
+                        shootBtn.hide();
+                    } else {
+                        timer.text(tmpTime);
+                    }
+
+                }
+                function myStop() {
+                    clearInterval(myInterval);
+                }
 
             });
 
             shootBtn.click(function (e) {
+                if (gameFlag == false) {
+                    console.log('gameFlag false', gameFlag);
+                    return false;
+                }
                 scoreVar += 2;
                 nowScore.text(scoreVar);
             });
