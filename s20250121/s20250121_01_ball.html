@@ -127,8 +127,15 @@
             const resetBtn = $('#resetBtn');
 
             let scoreVar = 0;
-            let scoreHighVar = 0;
-            let timeVar = 3;
+
+            // 預設0 有最高 就抓最高分數
+            // localStorage.setItem('highScore', 0);
+            // let scoreHighVar = 0;
+            let scoreHighVar = localStorage.getItem('highScore');
+            console.log('scoreHighVar', scoreHighVar);
+
+
+            let timeVar = 60;
             let gameFlag = true;
             let tmpTime = 0;
 
@@ -183,8 +190,11 @@
                     scoreVar += 2;
                 }
 
-
-
+                // 最高分數 < 目前分數
+                if (scoreHighVar < scoreVar) {
+                    localStorage.setItem('highScore', scoreVar);
+                    highScore.text(scoreVar);
+                }
 
                 nowScore.text(scoreVar);
             });
@@ -195,8 +205,6 @@
                 // 分數 0
 
                 // 倒數計時 60
-
-                timeVar = 3
                 tmpTime = 0
                 timer.text(timeVar);
                 console.log('timeVar', timeVar);
@@ -205,10 +213,9 @@
                 gameFlag = true;
                 console.log('gameFlag', gameFlag);
 
-
-
-
                 // 分數 0
+                scoreVar = 0;
+                nowScore.text(scoreVar);
             });
 
 
