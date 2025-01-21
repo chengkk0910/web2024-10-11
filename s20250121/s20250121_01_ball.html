@@ -128,7 +128,7 @@
 
             let scoreVar = 0;
             let scoreHighVar = 0;
-            let timeVar = 20;
+            let timeVar = 3;
             let gameFlag = true;
             let tmpTime = 0;
 
@@ -176,7 +176,7 @@
                 // 兩分球 31-60
                 // 三分球 0-30
                 // feature
-                console.log('tmpTime', tmpTime);                
+                console.log('tmpTime', tmpTime);
                 if (tmpTime <= 10) {
                     scoreVar += 3;
                 } else {
@@ -191,6 +191,24 @@
 
             resetBtn.click(function (e) {
                 console.log('resetBtn ok');
+                // 倒數計時 60
+                // 分數 0
+
+                // 倒數計時 60
+
+                timeVar = 3
+                tmpTime = 0
+                timer.text(timeVar);
+                console.log('timeVar', timeVar);
+                console.log('tmpTime', tmpTime);
+                // gameFlag false false
+                gameFlag = true;
+                console.log('gameFlag', gameFlag);
+
+
+
+
+                // 分數 0
             });
 
 
