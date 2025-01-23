@@ -47,7 +47,12 @@
     <!-- <img src="./php/data.php" alt="" srcset=""> -->
     <script>
         $(document).ready(function () {
+            // cors warning
+            // let url = `http://localhost/php/s20250123/php/data.php`;
+
+            // public
             let url = `http://localhost/php/s20250123/php/data_public.php`;
+            
             $.ajax({
                 type: "get",
                 url: url,
