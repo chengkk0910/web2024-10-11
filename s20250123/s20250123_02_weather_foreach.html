@@ -13,6 +13,27 @@
 
 <body>
 
+
+    <div class="container mt-3">
+        <h2>Hover Rows</h2>
+        <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
+        <table class="table table-hover" id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
         integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
@@ -28,6 +49,14 @@
             let pwd = pw;
             console.log('pwd', pwd);
 
+            // 1.bind
+            const myTable = $('#myTable');
+            const myTbody = myTable.find('tbody');
+            console.log('myTbody', myTbody);
+
+
+            // 2.action
+
             let url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${pwd}`;
             $.ajax({
                 type: "get",
@@ -41,8 +70,23 @@
                     console.log('data', data);
 
                     $.each(data, function (key, value) {
-                        console.log('key', key);
-                        console.log('value', value.locationName);
+                        // console.log('key', key);
+                        // console.log('value', value.locationName);
+
+                        let tmpLocationName = value.locationName;
+                        let tmpLocationID = key;
+                        // 1.地名
+                        console.log('tmpLocationName', tmpLocationName);
+
+                        // 2.table
+                        let temText = `
+                            <tr>
+                                <td>${tmpLocationID + 1}</td>
+                                <td>${tmpLocationName}</td>
+                            </tr>
+                        `;
+
+                        $(myTbody).append(temText);
 
                     });
 
