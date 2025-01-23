@@ -12,6 +12,11 @@ $data = [
     's3' => 'cat'
 ];
 
+header('Access-Control-Allow-Origin: http://127.0.0.1:5501');
+header('Access-Control-Allow-Origin: http://kai.com');
+// header('Access-Control-Allow-Origin: *');
+
+
 // dd($data);
 
 echo json_encode($data);
