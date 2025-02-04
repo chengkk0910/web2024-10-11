@@ -79,8 +79,28 @@
                         let tmpLocationName = value.locationName;
                         let tmpLocationID = key;
                         let tmpWeatherElement = value.weatherElement;
-                        console.log('tmpWeatherElement', tmpWeatherElement);
-                        console.log('tmpWeatherElement[2]', tmpWeatherElement[2]);
+                        // minT
+                        let tmpMinTtime0 = tmpWeatherElement[2].time[0].parameter['parameterName'];
+                        let tmpMinTtime1 = tmpWeatherElement[2].time[1].parameter['parameterName'];
+                        let tmpMinTtime2 = tmpWeatherElement[2].time[2].parameter['parameterName'];
+                        // maxT
+                        let tmpMaxTtime0 = tmpWeatherElement[4].time[0].parameter['parameterName'];
+                        let tmpMaxTtime1 = tmpWeatherElement[4].time[1].parameter['parameterName'];
+                        let tmpMaxTtime2 = tmpWeatherElement[4].time[2].parameter['parameterName'];
+
+                        console.log('tmpMinTtime0', tmpMinTtime0);
+                        console.log('tmpMinTtime1', tmpMinTtime1);
+                        console.log('tmpMinTtime2', tmpMinTtime2);
+
+                        console.log('tmpMaxTtime0', tmpMaxTtime0);
+                        console.log('tmpMaxTtime1', tmpMaxTtime1);
+                        console.log('tmpMaxTtime2', tmpMaxTtime2);
+
+
+                        // console.log('tmpWeatherElement', tmpWeatherElement);
+                        // console.log('tmpWeatherElement[2]', tmpWeatherElement[2]);
+                        // console.log('tmpWeatherElement[2].time[0].', tmpWeatherElement[2].time[0].parameter['parameterName']
+                        // );
 
                         // 1.地名
                         console.log('tmpLocationName', tmpLocationName);
@@ -90,9 +110,9 @@
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
-                                <td>11 - 13 度c</td>
-                                <td>11 - 13 度c</td>
-                                <td>11 - 13 度c</td>
+                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c</td>
+                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c</td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c</td>
                             </tr>
                         `;
 
