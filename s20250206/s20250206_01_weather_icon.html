@@ -84,6 +84,13 @@
                     let tmpDate = startTime1.substr(0, 10);
                     let tmpStartText = startTime1.substr(11, 2);
                     let tmpEndText = endTime1.substr(11, 2);
+
+                    let tmpTypeTime1 = 'day';
+                    if (tmpStartText == '06') {
+                        tmpTypeTime1 = 'day';
+                    } else {
+                        tmpTypeTime1 = 'night';
+                    }
                     // console.log('tmpDate', tmpDate);
                     // console.log('tmpStartText', tmpStartText);
                     // console.log('tmpEndText', tmpEndText);
@@ -103,6 +110,13 @@
                     // console.log('tmpStartText', tmpStartText);
                     // console.log('tmpEndText', tmpEndText);
 
+                    let tmpTypeTime2 = 'day';
+                    if (tmpStartText == '06') {
+                        tmpTypeTime2 = 'day';
+                    } else {
+                        tmpTypeTime2 = 'night';
+                    }
+
                     let textTime2 = `${tmpDate} [${tmpStartText} - ${tmpEndText}]`;
                     // console.log('textTime2', textTime2);
                     thTime2.text(textTime2);
@@ -117,6 +131,17 @@
                     // console.log('tmpDate', tmpDate);
                     // console.log('tmpStartText', tmpStartText);
                     // console.log('tmpEndText', tmpEndText);
+
+                    // tmpStartText 06 day
+                    // tmpEndText 18 night
+
+
+                    let tmpTypeTime3 = 'day';
+                    if (tmpStartText == '06') {
+                        tmpTypeTime3 = 'day';
+                    } else {
+                        tmpTypeTime3 = 'night';
+                    }
 
                     let textTime3 = `${tmpDate} [${tmpStartText} - ${tmpEndText}]`;
                     // console.log('textTime3', textTime3);
@@ -166,9 +191,9 @@
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
-                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c <img src="./day/${tmpWx0}.svg" alt="" srcset=""></td>
-                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c <img src="./day/${tmpWx1}.svg" alt="" srcset=""></td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c <img src="./day/${tmpWx2}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c <img src="./${tmpTypeTime1}/${tmpWx0}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c <img src="./${tmpTypeTime2}/${tmpWx1}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c <img src="./${tmpTypeTime3}/${tmpWx2}.svg" alt="" srcset=""></td>
                             </tr>
                         `;
 
