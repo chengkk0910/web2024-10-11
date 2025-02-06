@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+
+</head>
+
+<body>
+
+
+    <div class="container mt-3">
+        <h2>天氣API 資料</h2>
+        <p>36小時天氣資訊</p>
+        <table class="table table-hover" id="myTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="../kai/pw.js"></script>
+
+    <!-- datatable -->
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            let pwd = pw;
+            console.log('pwd', pwd);
+
+            // 1.bind
+            const myTable = $('#myTable');
+            const thTime1 = $('#th-time1');
+            const thTime2 = $('#th-time2');
+            const thTime3 = $('#th-time3');
+            const myTbody = myTable.find('tbody');
+
+            console.log('myTbody', myTbody);
+
+
+            // 2.action
+
+            let url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${pwd}`;
+            $.ajax({
+                type: "get",
+                url: url,
+                // data: "data",
+                dataType: "Json",
+                success: function (res) {
+                    console.log('res', res);
+                    let data = res.records.location[3].locationName;
+                    data = res.records.location;
+                    console.log('data', data);
+
+                    $.each(data, function (key, value) {
+
+                        let tmpLocationName = value.locationName;
+                        let tmpLocationID = key;
+
+                        // 1.地名
+                        // console.log('tmpLocationName', tmpLocationName);
+
+                        // 2.table
+                        let temText = `
+                            <tr>
+                                <td>${tmpLocationID + 1}</td>
+                                <td>${tmpLocationName}</td>
+                            </tr>
+                        `;
+
+                        $(myTbody).append(temText);
+
+
+                    });
+
+
+                    // end.datatable
+                    $('#myTable').DataTable();
+
+                    // myTable.DataTable();
+
+                    // let table = new DataTable('#myTable', {
+                    //     // config options...
+                    // });
+
+
+
+                }
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>
