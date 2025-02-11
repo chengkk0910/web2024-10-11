@@ -12,36 +12,6 @@
 </head>
 
 <body>
-    <!-- table -->
-
-    <div class="container mt-3">
-        <h2>Bordered Table</h2>
-        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-        <table class="table table-bordered" id="myTable">
-            <thead>
-                <tr>
-                    <th>time</th>
-                    <th>open</th>
-                    <th>high</th>
-                    <th>low</th>
-                    <th>close</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2011/6/27</td>
-                    <td>57.5</td>
-                    <td>59.8</td>
-                    <td>57.2</td>
-                    <td>59.7</td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
-
-
-    <img src="./data/stock/s0050.json" alt="" srcset="">
 
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
@@ -53,40 +23,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
-            // 1.bind
-            const myTable = $('#myTable');
-            const myTbody = myTable.find('tbody');
 
-
-            // data
-
-            let url = './data/stock/s0050.json';
-            $.ajax({
-                type: "get",
-                url: url,
-                // data: "data",
-                dataType: "json",
-                success: function (res) {
-                    let data = res;
-                    console.log('res', res);
-
-                    // foreach
-                    $.each(data, function (key, value) {
-                        console.log('time', value.time);
-                        let tmpText = `
-                            <tr>
-                                <td>${value.time}</td>
-                                <td>${value.open}</td>
-                                <td>${value.high}</td>
-                                <td>${value.low}</td>
-                                <td>${value.close}</td>
-                            </tr>
-                        `;
-                        myTbody.append(tmpText);
-                    });
-
-                }
-            });
 
 
         });

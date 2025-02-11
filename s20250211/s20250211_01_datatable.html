@@ -52,11 +52,40 @@
         $(document).ready(function () {
             // var DataTable = require('datatables.net')(window, $);
 
-            let table = new DataTable('#myTable', {
-                // config options...
+            // let table = new DataTable('#myTable', {
+            //     // config options...
+            // });
+
+            myTable.DataTable({
+                language: {
+                    "lengthMenu": "顯示 _MENU_ 筆資料",
+                    "sProcessing": "處理中...",
+                    "sZeroRecords": "没有匹配结果",
+                    "sInfo": "目前有 _MAX_ 筆資料",
+                    "sInfoEmpty": "目前共有 0 筆紀錄",
+                    "sInfoFiltered": " ",
+                    "sInfoPostFix": "",
+                    "sSearch": "搜尋:",
+                    "sUrl": "",
+                    "sEmptyTable": "尚未有資料紀錄存在",
+                    "sLoadingRecords": "載入資料中...",
+                    "sInfoThousands": ",",
+                    "oPaginate": {
+                        "sFirst": "首頁",
+                        "sPrevious": "上一頁",
+                        "sNext": "下一頁",
+                        "sLast": "末頁"
+                    },
+                    "order": [
+                        [0, "desc"]
+                    ],
+                    "oAria": {
+                        "sSortAscending": ": 以升序排列此列",
+                        "sSortDescending": ": 以降序排列此列"
+                    }
+                },
+
             });
-
-
         });
     </script>
 </body>
