@@ -59,6 +59,7 @@
 
 
             // data
+
             let url = './data/stock/s0050.json';
             $.ajax({
                 type: "get",
@@ -66,10 +67,11 @@
                 // data: "data",
                 dataType: "json",
                 success: function (res) {
+                    let data = res;
                     console.log('res', res);
 
                     // foreach
-                    $.each(res, function (key, value) {
+                    $.each(data, function (key, value) {
                         console.log('time', value.time);
                         let tmpText = `
                             <tr>
