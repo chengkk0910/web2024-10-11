@@ -47,6 +47,19 @@
         </table>
     </div>
 
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <canvas id="myChart1"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <img src="./data/stock/s0050.json" alt="" srcset="">
 
@@ -60,12 +73,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
         $(document).ready(function () {
             // 1.bind
             const myTable = $('#myTable');
             const myTbody = myTable.find('tbody');
-
+            const ctx1 = document.getElementById('myChart1');
 
             // data
 
@@ -130,6 +146,28 @@
                     // console.log('sum', sum);
                     console.log('resArr', resArr);
 
+
+                    // chart.js
+                    // ctx1
+                    new Chart(ctx1, {
+                        type: 'bar',
+                        data: {
+                            labels: ['rise0', 'rise1', 'rise2', 'lose0', 'lose1', 'lose2'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [resArr['rise0'], resArr['rise1'], resArr['rise2'], resArr['lose0'], resArr['lose1'], resArr['lose2']],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                    // chart.js end
 
                     myTable.DataTable({
                         language: {
